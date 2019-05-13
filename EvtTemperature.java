@@ -1,20 +1,20 @@
 package iot;
 
+import java.util.Random;
+
 public class EvtTemperature {
-
-	private int  nouvelleTemperature;
-	public EvtTemperature(int temp) {
-		
-		this.nouvelleTemperature = temp;
-		
-	}
-
-	public gettemp()
-	{
-		return nouvelleTemperature;	
-	}
+     
+    private float newtemp;
+    
+    public  EvtTemperature(float temp)
+    {
+    	this.newtemp =temp;
+    }
 	
-	
+    public float gettemp()
+    {
+    	return this.newtemp; 
+    }
 	
 	
 	
