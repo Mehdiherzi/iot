@@ -19,6 +19,7 @@ public class Thermometre {
     public Thermometre(String name)
     {
       this.tempnow = majTemperature();
+      this.name = name;
     }
     
     public float majTemperature()
@@ -30,6 +31,11 @@ public class Thermometre {
     {
     	return this.tempnow;
     }
+    
+    public void settemp(float temp)
+    {
+    	this.tempnow=temp;
+    }
  
     
  
@@ -39,15 +45,15 @@ public class Thermometre {
      */
     public static void  main (String [] args)
     {  
-        Thermometre tp = new Thermometre("alpha");
+        Thermometre alpha = new Thermometre("alpha");
+        Thermometre beta = new Thermometre("beta");
         
-        Thermometre a ;
-        a=new Thermometre("beta");
-       for(int i =0 ; i<10 ; i++ )
-    	{   
-        
-    	System.out.println(a.gettemp());
-    	}
+        alpha.majTemperature();
+        System.out.println(alpha.gettemp());
+        alpha.settemp.majTemperature;
+        System.out.println(alpha.gettemp());
+        alpha.majTemperature();
+        System.out.println(alpha.gettemp());
     }
 
 }
