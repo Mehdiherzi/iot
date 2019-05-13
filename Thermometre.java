@@ -23,37 +23,52 @@ public class Thermometre {
     }
     
     public float majTemperature()
-    {
-        return (float) rdm.nextInt(100)-50; 
+    {   
+        return (float) rdm.nextInt(100)-50;
     }
     
     public float gettemp()
     {
     	return this.tempnow;
     }
+
+    public float gettemp1()
+    {   
+      tempnow  =this.majTemperature();   //  teste experimantale 
+        
+      return  this.tempnow ;
+    	 
+    }
     
+    /*
     public void settemp(float temp)
     {
     	this.tempnow=temp;
     }
- 
+ */
     
  
     
     /**
      * @param args
      */
+ 
     public static void  main (String [] args)
     {  
-        Thermometre alpha = new Thermometre("alpha");
+        Thermometre a  = new Thermometre("alpha");
         Thermometre beta = new Thermometre("beta");
+
+      for (int i = 0; i < 10; i++) {
+        a.majTemperature();
+        System.out.println(a.gettemp1());    
+     
         
-        alpha.majTemperature();
-        System.out.println(alpha.gettemp());
-        alpha.settemp.majTemperature;
-        System.out.println(alpha.gettemp());
-        alpha.majTemperature();
-        System.out.println(alpha.gettemp());
+        
+        
+    }
+     
+    
+    
     }
 
 }
