@@ -15,7 +15,9 @@ public class Thermometre {
     
     Random rdm  = new Random();
 
-    ArrayList <EvttemperatureListener> abonner;
+    ArrayList <EvttemperatureListener> abonnement;
+    
+    
 
     public Thermometre(String name)
     {
@@ -24,12 +26,21 @@ public class Thermometre {
       this.tempnow =   (float) rdm.nextInt(100)-50;
     }
     
+    public void abonner(Chaudiere a )
+    {
+    	this.abonnement.add(a);
+    }
+    public void desabonner( Chaudiere a )
+    {
+    	this.abonnement.remove(a);
+    }
+    
     public void majTemperature()
     {   
         //return (float) rdm.nextInt(100)-50;
     	EvtTemperature Evt = new EvtTemperature(this.tempnow);
     	
-    	for(EvttemperatureListener l : this.abonner)
+    	for(EvttemperatureListener l : this.abonnement)
     	{
     		l.reagie(Evt);
     	}
