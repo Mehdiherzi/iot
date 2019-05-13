@@ -22,7 +22,7 @@ public class Thermometre {
     
     public float majTemperature()
     {
-        return (float)rdm.nextInt(100)-50; 
+        return (float)rdm.nextFloat(100)-50; 
     }
     
  
