@@ -14,24 +14,33 @@ public class Thermometre {
     private String name ;         // the name of the thermometer
     
     Random rdm  = new Random();
-    
-    float a =100.0f;
+
+    ArrayList <EvttemperatureListener> abonner;
+
     public Thermometre(String name)
     {
-      this.tempnow = majTemperature();
+      /*this.tempnow = majTemperature();*/
       this.name = name;
+      this.tempnow =   (float) rdm.nextInt(100)-50;
     }
     
-    public float majTemperature()
+    public void majTemperature()
     {   
-        return (float) rdm.nextInt(100)-50;
+        //return (float) rdm.nextInt(100)-50;
+    	EvtTemperature Evt = new EvtTemperature(this.tempnow);
+    	
+    	for(EvttemperatureListener l : this.abonner)
+    	{
+    		l.reagie(Evt);
+    	}
+    	
     }
     
     public float gettemp()
     {
     	return this.tempnow;
     }
-
+/*
     public float gettemp1()
     {   
       tempnow  =this.majTemperature();   //  teste experimantale 
@@ -39,13 +48,14 @@ public class Thermometre {
       return  this.tempnow ;
     	 
     }
+    */
     
     /*
     public void settemp(float temp)
     {
     	this.tempnow=temp;
     }
- */
+    */
     
  
     
@@ -59,8 +69,8 @@ public class Thermometre {
         Thermometre beta = new Thermometre("beta");
 
       for (int i = 0; i < 10; i++) {
-        a.majTemperature();
-        System.out.println(a.gettemp1());    
+       // a.majTemperature();
+        System.out.println("test");    
      
         
         
