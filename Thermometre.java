@@ -1,6 +1,6 @@
 package iot;
 
-import  java.util.Random;
+import  java.util.*;
 
 
 
@@ -14,7 +14,8 @@ public class Thermometre {
     private String name ;         // the name of the thermometer
     
     Random rdm  = new Random();
-
+    
+    float a =100.0f;
     public Thermometre(String name)
     {
       this.tempnow = majTemperature();
@@ -22,13 +23,31 @@ public class Thermometre {
     
     public float majTemperature()
     {
-        return (float)rdm.nextFloat(100)-50; 
+        return (float) rdm.nextInt(100)-50; 
     }
     
- 
-    public static void  main (String [] args)
+    public float gettemp()
     {
-    	System.out.print(" ");
+    	return this.tempnow;
+    }
+ 
+    
+ 
+    
+    /**
+     * @param args
+     */
+    public static void  main (String [] args)
+    {  
+        Thermometre tp = new Thermometre("alpha");
+        
+        Thermometre a ;
+        a=new Thermometre("beta");
+       for(int i =0 ; i<10 ; i++ )
+    	{   
+        
+    	System.out.println(a.gettemp());
+    	}
     }
 
 }
