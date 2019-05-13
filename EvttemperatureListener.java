@@ -1,8 +1,8 @@
 package iot;
 
+ 
 public interface EvttemperatureListener {
 
-public abstract void reagie (Evttemperature evt);
-	
+public abstract void reagie ( EvtTemperature evt);
 	
 }
