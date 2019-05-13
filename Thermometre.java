@@ -71,10 +71,7 @@ public class Thermometre {
       for (int i = 0; i < 10; i++) {
        // a.majTemperature();
         System.out.println("test");    
-     
-        
-        
-        
+
     }
      
     
